@@ -1,0 +1,17 @@
+$(function () {
+    $.getJSON('products.json', function (products) {
+        $.each(products, function (i, p) {
+            $('#products').append(`
+                <div class="col-12 col-md-4">
+                    <div class="card h-100">
+                        <img src="${p.image}" class="card-img-top" alt="${p.alt}" loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title">${p.name}</h5>
+                            <p class="card-text">$${p.price}</p>
+                            <a href="#" class="btn btn-outline-primary">View</a>
+                        </div>
+                    </div>
+                </div>`);
+        });
+    });
+});

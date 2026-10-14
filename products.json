@@ -1,0 +1,5 @@
+[
+  { "name": "Oak Dining Table", "price": 899, "image": "https://placehold.co/600x400?text=Dining+Table", "alt": "Oak dining table" },
+  { "name": "Linen Sofa", "price": 1299, "image": "https://placehold.co/600x400?text=Sofa", "alt": "Gray linen sofa" },
+  { "name": "Walnut Bookshelf", "price": 449, "image": "https://placehold.co/600x400?text=Bookshelf", "alt": "Walnut bookshelf" }
+]
