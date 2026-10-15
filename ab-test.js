@@ -7,8 +7,11 @@ $(function () {
     const forced = new URLSearchParams(window.location.search).get('variant');
     let variant;
 
+    let isPreview = false;
+
     if (forced && (forced.toUpperCase() === 'A' || forced.toUpperCase() === 'B')) {
         variant = forced.toUpperCase();
+        isPreview = true;
     } else {
         variant = localStorage.getItem('ab-variant');
         if (variant !== 'A' && variant !== 'B') {
@@ -19,4 +22,19 @@ $(function () {
 
     $('#headline').text(variants[variant].headline);
     $('#cta').text(variants[variant].cta);
+
+    function track(eventName) {
+        if (isPreview) {
+            console.log('[preview, not tracked]', eventName, variant);
+            return;
+        }
+        console.log('[tracked]', eventName, 'variant', variant);
+    }
+
+    track('impression');
+
+    $('#cta').on('click', function (e) {
+        e.preventDefault();
+        track('click');
+    });
 });
