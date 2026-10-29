@@ -1,7 +1,14 @@
 .hero {
     background-color: #212529;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/hero.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("images/hero.jpg");
     background-size: cover;
     background-position: center;
     padding: 6rem 0;
+}
+
+.card-img-top {
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    object-position: center 65%;
 }
